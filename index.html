@@ -70,7 +70,7 @@
   #incomeTaxTable {
   border-collapse: collapse; /* Merge borders of adjacent cells */
   width: 100%;
-  margin-top: 100px; /* Add some spacing between the content and the table */
+  margin-top: 40px; /* Add some spacing between the content and the table */
 }
 
 #incomeTaxTable th, #incomeTaxTable td {
@@ -92,7 +92,7 @@
   table {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 50px;
 	margin-bottom: 40px
   }
 
@@ -135,11 +135,11 @@
  <option value="moving">Moving crypto between your own wallets </option>
    <option value="holding">Tax on Crypto Holding</option>
    <option value="airdrops">Tax on Airdrops</option>
+   <option value="cryptoGifts">Tax on Crypto Gifts</option>
   <option value="nftTrading">Tax on NFT Trading</option>
   <option value="cryptoMining">Tax on Crypto Mining</option>
   <option value="cryptoStaking">Tax on Crypto Staking Rewards</option>
   <option value="cryptoMinting">Tax on Crypto Minting</option>
-  <option value="cryptoGifts">Tax on Crypto Gifts</option>
   <option value="cryptoSalary">Tax on Crypto Salary</option>
   <option value="cryptoDonations">Tax on Crypto Donations</option>
   <option value="cryptoReferrals">Tax on Crypto Referrals</option>
@@ -345,15 +345,15 @@ document.getElementById("calculateButton").addEventListener("click", function() 
         <li><strong>Tax Percentage: Varies</strong></li>
         <li>Crypto gifts received with a value up to ₹50,000 are tax-exempt. Gifts from non-relatives exceeding ₹50,000 are taxable. Special occasions, inheritance, marriage, and contemplation of death gifts are exempt from tax.</li>
       </ul>
-      <p>Example: Receiving crypto gifts from relatives worth ₹40,000 in value is tax-exempt.</p>`;
+      <p>Example: Receiving crypto gifts from relatives worth ₹40,000 in value is tax-exempt. But if you receive a crypto gift of value more than ₹50,000 say 50,001, You'll have to pay the tax for the whole amount of ₹50,001 as per your tax slab. </p>`;
   } else if (selectedOption === "cryptoSalary") {
     contentDiv.innerHTML = `
       <h2>Tax on Crypto Salary</h2>
       <ul>
-        <li><strong>Tax Percentage: Varies</strong></li>
+        <li><strong>Tax Percentage: As per individual's Tax Slab</strong></li>
         <li>Receiving a salary in crypto is taxable in India and subject to income tax as per the applicable tax slab rates.</li>
       </ul>
-      <p>Example: Receiving a monthly crypto salary of ₹50,000 is taxable as per the applicable income tax rate.</p>`;
+      <p>Example: Receiving a monthly crypto salary of ₹50,000 is taxable as per the applicable income tax rate. If you later sell the crypto at a higher price than the price of acquisition., you'll have to pay 30% tax on the gains.</p>`;
   } else if (selectedOption === "cryptoDonations") {
     contentDiv.innerHTML = `
       <h2>Tax on Crypto Donations</h2>
@@ -361,12 +361,12 @@ document.getElementById("calculateButton").addEventListener("click", function() 
         <li><strong>Tax Percentage: Varies</strong></li>
         <li>Crypto donations are taxable in India as the sale of digital assets. Capital gains from the sale of donated cryptos are subject to tax.</li>
       </ul>
-      <p>Example: Donating crypto worth ₹1,00,000 results in capital gains subject to tax.</p>`;
+      <p>Example: An individual purchased 1 Bitcoin for ₹20,000 and later decided to donate it when the price increased to ₹40,000. </br>According to the crypto tax law in India, the individual would be liable to pay a 30% tax on the capital gains made before the transfer.</p>`;
   } else if (selectedOption === "cryptoReferrals") {
     contentDiv.innerHTML = `
       <h2>Tax on Crypto Referrals</h2>
       <ul>
-        <li><strong>Tax Percentage: Varies</strong></li>
+        <li><strong>Tax Percentage: As per individual's Tax Slab</strong></li>
         <li>Crypto referral bonuses are considered additional income and are subject to income tax based on the applicable slab rate for the individual.</li>
       </ul>
       <p>Example: Earning a referral bonus of ₹5,000 in crypto results in additional taxable income.</p>`;
@@ -383,6 +383,16 @@ document.getElementById("calculateButton").addEventListener("click", function() 
 });
 </script>
 
+    <div>
+      <a class="donate-with-crypto"
+        href="https://commerce.coinbase.com/checkout/a376eccf-89c1-4f35-ae15-f86033771d05">
+        Donate with Crypto
+      </a>
+      <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
+      </script>
+    </div>
 
 </body>
 </html>
+
+   
