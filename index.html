@@ -1,6 +1,12 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Understanding Crypto Tax in India: Your Ultimate Guide">
+
+<!-- Import fonts from Google Fonts for better cross-device consistency -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap">
+
 <style>
   body {
     background-color: black;
@@ -53,14 +59,60 @@
     color: black;
   }
   footer {
-    text-align: center;
-    padding: 20px;
-    background-color: black;
-    color: white;
-    position: fixed;
-    bottom: 0;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Use rgba with an alpha value for transparency */
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+  #incomeTaxTable {
+  border-collapse: collapse; /* Merge borders of adjacent cells */
+  width: 50%;
+  margin-top: 100px; /* Add some spacing between the content and the table */
+}
+
+#incomeTaxTable th, #incomeTaxTable td {
+  border: 1px solid white; /* Add a white border to cells */
+  padding: 8px; /* Add padding to cells */
+  text-align: center; /* Center-align content in cells */
+}
+
+#incomeTaxTable th {
+  background-color: #333; /* Dark background color for table header */
+}
+
+#incomeTaxTable caption {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Table 2 styling */
+  table {
+    border-collapse: collapse;
     width: 100%;
-  }	
+    margin-top: 40px;
+	margin-bottom: 40px
+  }
+
+  th, td {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #333;
+    color: white;
+  }
+
+  caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+
 </style>
 </head>
 <body>
@@ -69,19 +121,23 @@
   <h1>Understanding Crypto Tax in India: Your Ultimate Guide</h1>
 </header>
 <footer>
-      Made with Love by ivaavi.eth
+      Made with ❤️ by ivaavi.eth
     </footer>
 <main>
-  <p>Navigating crypto tax laws in India can be tricky. This guide will help you understand and manage taxes on your digital assets, covering various aspects of crypto taxation.</p>
+  <p>Navigating crypto tax laws in India can be tricky. This guide will help you understand and manage taxes on your digital assets, covering various aspects of crypto taxation.</p></br></br>
 
   <!-- Dropdown section -->
 	<select id="taxType">
  <option value="" selected disabled>Select Tax Type</option>
-  <option value="cryptoGains">Tax on Crypto Gains</option>
-  <option value="airdrops">Tax on Airdrops</option>
+ <option value="cryptoGains">Tax on Crypto Gains</option>
+ <option value="buying">Tax on Crypto Buying</option>
+ <option value="selling">Tax on Crypto Selling</option>
+ <option value="moving">Moving crypto between your own wallets </option>
+   <option value="holding">Tax on Crypto Holding</option>
+   <option value="airdrops">Tax on Airdrops</option>
   <option value="nftTrading">Tax on NFT Trading</option>
   <option value="cryptoMining">Tax on Crypto Mining</option>
-  <option value="cryptoStaking">Tax on Crypto Staking</option>
+  <option value="cryptoStaking">Tax on Crypto Staking Rewards</option>
   <option value="cryptoMinting">Tax on Crypto Minting</option>
   <option value="cryptoGifts">Tax on Crypto Gifts</option>
   <option value="cryptoSalary">Tax on Crypto Salary</option>
@@ -97,7 +153,93 @@
 <div id="content">
   <!-- Content details will be displayed here -->
 </div>
-
+<!-- Table for Income Tax Slabs -->
+  <table id="incomeTaxTable">
+    <caption>Income Tax Slabs</caption>
+    <thead>
+      <tr>
+        <th>Income Range</th>
+        <th>Tax Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Up to ₹2,50,000</td>
+        <td>No tax</td>
+      </tr>
+      <tr>
+        <td>₹2,50,001 - ₹5,00,000</td>
+        <td>5%</td>
+      </tr>
+      <tr>
+        <td>₹5,00,001 - ₹10,00,000</td>
+        <td>20%</td>
+      </tr>
+      <tr>
+        <td>Above ₹10,00,000</td>
+        <td>30%</td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="transactionTaxTable">
+  <caption>Transaction/Tax</caption>
+  <thead>
+    <tr>
+      <th>Transaction</th>
+      <th>Tax</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Buying crypto</td>
+      <td>1% TDS, usually deducted by the exchange (excluding international & P2P trades)</td>
+    </tr>
+    <tr>
+      <td>Selling crypto</td>
+      <td>30% tax on any gain</td>
+    </tr>
+    <tr>
+      <td>Trading crypto for crypto</td>
+      <td>30% tax on any gain</td>
+    </tr>
+    <tr>
+      <td>Spending crypto</td>
+      <td>30% tax on any gain</td>
+    </tr>
+    <tr>
+      <td>Holding crypto</td>
+      <td>Tax free</td>
+    </tr>
+    <tr>
+      <td>Moving crypto between your own wallets</td>
+      <td>Tax free</td>
+    </tr>
+    <tr>
+      <td>Airdrops of crypto</td>
+      <td>Income Tax at your individual tax rate, 30% tax if you later sell</td>
+    </tr>
+    <tr>
+      <td>Hard forks</td>
+      <td>Income Tax at your individual tax rate on receipt, 30% tax if you later sell</td>
+    </tr>
+    <tr>
+      <td>Gifts of crypto</td>
+      <td>Recipient is generally taxed, with some exceptions for gifts from close family or under ₹50,000</td>
+    </tr>
+    <tr>
+      <td>Donating crypto</td>
+      <td>Only cash donations are tax deductible, any perceived profits may be subject to 30% tax</td>
+    </tr>
+    <tr>
+      <td>Mining rewards</td>
+      <td>Income Tax at your individual tax rate, 30% tax if you later sell</td>
+    </tr>
+    <tr>
+      <td>Staking rewards</td>
+      <td>Income Tax at your individual tax rate, 30% tax if you later sell</td>
+    </tr>
+  </tbody>
+</table>
 <script>
 document.getElementById("calculateButton").addEventListener("click", function() {
   var selectedOption = document.getElementById("taxType").value;
@@ -119,20 +261,55 @@ document.getElementById("calculateButton").addEventListener("click", function() 
       <p>NOTE: Loss incurred in your crypto cannot be offset against profits or carried forward. A 1% TDS is applicable to the transfer of VDAs.</p>
 	  </ul>
     `;
-  } else if (selectedOption === "airdrops") {
+  } else if (selectedOption === "buying") {
+    contentDiv.innerHTML = `
+      <h2>Tax on Crypto Buying</h2>
+      <ul>
+        <li><strong>Tax Percentage: 1% TDS, usually deducted by the exchange (excluding international & P2P trades)</strong></li>
+        <li>A 1% TDS applies to crypto purchases on Indian exchanges, deducted automatically.</li>
+      
+      <li>For P2P or international platform crypto purchases, buyers deduct and deposit TDS.</li>
+	  </ul>
+    `;
+  }else if (selectedOption === "selling") {
+    contentDiv.innerHTML = `
+      <h2>Tax on Crypto Selling</h2>
+      <ul>
+        <li><strong>Tax Percentage: 1%TDS and 30% tax on any gain</strong></li>
+        <li>It includes both :</br> 1. Selling crypto for fiat currency </br> 2. Selling crypto for crypto currency </li>
+      </ul>
+    `;
+  }else if (selectedOption === "holding") {
+    contentDiv.innerHTML = `
+      <h2>Tax on Crypto Holding</h2>
+      <ul>
+        <li><strong>Tax Percentage:	Tax free</strong></li>
+        <li>There is no tax for just holding any crypto.</li>
+      </ul>
+    `;
+	}else if (selectedOption === "moving") {
+    contentDiv.innerHTML = `
+      <h2>Tax on Moving Crypto Between Your Own Wallets</h2>
+      <ul>
+        <li><strong>Tax Percentage:	Tax free</strong></li>
+        <li>There is no tax for moving crypto to your own wallets.</li>
+      </ul>
+    `;
+  }else if (selectedOption === "airdrops") {
     contentDiv.innerHTML = `
       <h2>Tax on Airdrops</h2>
       <ul>
-        <li><strong>Tax Percentage: As per individual's Tax Slab, 30% tax if you later sell</strong></li>
-        <li>Airdrops are taxed as Income from Other Sources (IFOS) if they have value and are traded on exchanges or DEXes.</li>
+        <li><strong>Tax Percentage: As per individual's Tax Slab, 30% tax on gains if you sell later</strong></li>
+        <li>Receiving airdrops are taxed as Income from Other Sources (IFOS) and it is a taxable event at your own tax slab.</li>
+		<li><strong>NOTE:</strong>Airdrops are considered as gifts and you can claim tax exemption if the total value of the Airdrop is less than ₹50,000</li>
       </ul>
-      <p>Example: Receiving ABC tokens as an airdrop with a value of ₹1,00,000 and later selling them for ₹1,20,000 results in taxable gains of ₹20,000, taxed at 30%.</p>
+      <p>Example: Receiving ABC tokens as an airdrop with a value of ₹1,00,000 and later selling them for ₹1,20,000 results in taxable event of receiving the airdrop(at your tax slab rate) PLUS taxable gains of ₹20,000, taxed at 30%.</br>Let's say your income fall under the ₹2,50,001 - ₹5,00,000 slab(5% rate), so you'll have to pay a total tax of ₹11,000. Total tax = 5% on ₹1,00,000 + 30% on ₹20,000</p>
     `;
   } else if (selectedOption === "nftTrading") {
     contentDiv.innerHTML = `
       <h2>Tax on NFT Trading</h2>
       <ul>
-        <li><strong>Tax Percentage: 30%</strong></li>
+        <li><strong>Tax Percentage: 1% TDS and 30% tax</strong></li>
         <li>NFTs are subject to a 30% tax rate (plus surcharge and cess) under the IT Act from April 01, 2022. An additional 1% TDS will be deducted from every NFT sale.</li>
       </ul>
       <p>Example: Selling an NFT for ₹50,000 incurs a tax of ₹15,000 (30%) plus any applicable surcharge and cess.</p>`;
@@ -140,18 +317,19 @@ document.getElementById("calculateButton").addEventListener("click", function() 
     contentDiv.innerHTML = `
       <h2>Tax on Crypto Mining</h2>
       <ul>
-        <li><strong>Tax Percentage: Varies</strong></li>
+        <li><strong>Tax Percentage:As per individual's Tax Slab, 30% tax if you later sell</strong></li>
         <li>Mining income is classified as Income from Business or Income from Other Sources based on the type of mining activity. Crypto mining income is taxable in India.</li>
       </ul>
-      <p>Example: Earning ₹10,000 from crypto mining is considered income and is subject to taxation as per the applicable tax rate.</p>`;
+      <p>Example: Earning ₹10,000 worth of crypto from crypto mining is considered income and is subject to taxation as per the applicable tax rate. If you hold the crypto and sell it later at ₹15,000, you'll have to pay 30% tax on the gains (30% on ₹5,000 in this case) </p>`;
   } else if (selectedOption === "cryptoStaking") {
     contentDiv.innerHTML = `
-      <h2>Tax on Crypto Staking</h2>
+      <h2>Tax on Crypto Staking Rewards</h2>
       <ul>
-        <li><strong>Tax Percentage: Varies</strong></li>
-        <li>Staking income is taxed as Other Income at applicable Income Tax slab rates. Capital Gains Tax will be levied upon selling the staked crypto asset.</li>
+        <li><strong>Tax Percentage:As per individual's Tax Slab, 30% tax if you later sell</strong></li></br>
+        <li>Staking income is taxed as Other Income at applicable Income Tax slab rates based on the fair market value of the tokens in INR on the day you receive tokens.</li>
+		<li>Additionally, a tax rate of 30% applies to any profits generated from the subsequent sale, exchange, or utilization of your staking rewards.</li>
       </ul>
-      <p>Example: Staking 100 "X" coins with a 10% APR results in a 10% interest on assets over a year.</p>`;
+      <p>Example: Staking 100 "X" coins with a 10% APR results in a 10% interest on assets over a year.That means after a year you'll have 110 'X' coins. </p>`;
   } else if (selectedOption === "cryptoMinting") {
     contentDiv.innerHTML = `
       <h2>Tax on Crypto Minting</h2>
