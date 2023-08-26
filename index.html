@@ -46,16 +46,17 @@
     background-color: transparent;
     color: white;
     border: 1px solid white;
-    padding: 5px 12px;
+    padding: 6px 30px;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.5s, color 0.5s;
+	margin-top: 10px;
   }
 
   /* Style for the button on hover */
   #calculateButton:hover {
-    background-color: white;
+    background-color: #c1ff72;
     color: black;
   }
   footer {
@@ -86,6 +87,7 @@
 #incomeTaxTable caption {
   font-weight: bold;
   margin-bottom: 10px;
+   font-size: 16px;
 }
 
 /* Table 2 styling */
@@ -110,21 +112,41 @@
   caption {
     font-weight: bold;
     margin-bottom: 10px;
+	 font-size: 16px;
   }
-  
+  /* Style for the donate button */
+.donate-with-crypto-button {
+  display: inline-block;
+  padding: 10px 60px;
+  background-color: #c1ff72;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+   margin-bottom: 100px;
+}
+
+.donate-with-crypto-button:hover {
+  background-color: #dca0f2;
+}
 
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Understanding Crypto Tax in India: Your Ultimate Guide</h1>
+  <h1>📌Understanding Crypto Tax in India 🧾: Your Ultimate Guide</h1>
 </header>
 <footer>
       Made with ❤️ by ivaavi.eth
     </footer>
 <main>
-  <p>Navigating crypto tax laws in India can be tricky. This guide will help you understand and manage taxes on your digital assets, covering various aspects of crypto taxation.</p></br></br>
+  <p style="font-size: 18px;">Navigating crypto tax laws in India can be tricky. This guide will help you understand and manage taxes on your digital assets, covering various aspects of crypto taxation.</p>
+</br></br>
 
   <!-- Dropdown section -->
 	<select id="taxType">
@@ -151,6 +173,7 @@
 
 <!-- Content display area -->
 <div id="content">
+
   <!-- Content details will be displayed here -->
 </div>
 <!-- Table for Income Tax Slabs -->
@@ -240,16 +263,9 @@
     </tr>
   </tbody>
 </table>
-	
-    <div>
-      <a class="donate-with-crypto"
-        href="https://commerce.coinbase.com/checkout/a376eccf-89c1-4f35-ae15-f86033771d05">
-        Donate with Crypto
-      </a>
-      <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
-      </script>
-    </div>
+
 <script>
+
 document.getElementById("calculateButton").addEventListener("click", function() {
   var selectedOption = document.getElementById("taxType").value;
   var contentDiv = document.getElementById("content");
@@ -391,8 +407,20 @@ document.getElementById("calculateButton").addEventListener("click", function() 
   // Add more sections here
 });
 </script>
-
-
+<!-- Button For Donation using crypto -->
+<div>
+  <a class="donate-with-crypto-button"
+    href="https://commerce.coinbase.com/checkout/a376eccf-89c1-4f35-ae15-f86033771d05"
+    target="_blank"
+    rel="noopener noreferrer"> <!-- Add target and rel attributes -->
+    Donate with Crypto
+  </a>
+</div>
+<script>
+  var script = document.createElement("script");
+  script.src = "https://commerce.coinbase.com/v1/checkout.js?version=201807";
+  document.head.appendChild(script);
+</script>
 </body>
 </html>
 
