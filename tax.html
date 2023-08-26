@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    padding: 20px;
+    text-align: center;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  /* Style for the dropdown */
+  #taxType {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  /* Style for the dropdown options */
+  #taxType option {
+    background-color: black;
+    color: white;
+  }
+
+  /* Style for the button */
+  #calculateButton {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+  }
+
+  /* Style for the button on hover */
+  #calculateButton:hover {
+    background-color: white;
+    color: black;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }	
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Understanding Crypto Tax in India: Your Ultimate Guide</h1>
+</header>
+<footer>
+      Made with ❤️ by ivaavi.eth
+    </footer>
+<main>
+  <p>Navigating crypto tax laws in India can be tricky. This guide will help you understand and manage taxes on your digital assets, covering various aspects of crypto taxation.</p>
+
+  <!-- Dropdown section -->
+	<select id="taxType">
+ <option value="" selected disabled>Select Tax Type</option>
+  <option value="cryptoGains">Tax on Crypto Gains</option>
+  <option value="airdrops">Tax on Airdrops</option>
+  <option value="nftTrading">Tax on NFT Trading</option>
+  <option value="cryptoMining">Tax on Crypto Mining</option>
+  <option value="cryptoStaking">Tax on Crypto Staking</option>
+  <option value="cryptoMinting">Tax on Crypto Minting</option>
+  <option value="cryptoGifts">Tax on Crypto Gifts</option>
+  <option value="cryptoSalary">Tax on Crypto Salary</option>
+  <option value="cryptoDonations">Tax on Crypto Donations</option>
+  <option value="cryptoReferrals">Tax on Crypto Referrals</option>
+  <option value="tokenSales">Tax on Token Sales (ICOs and IDOs)</option>
+</select>
+
+<!-- Button to calculate tax -->
+<button id="calculateButton">Calculate Tax</button>
+
+<!-- Content display area -->
+<div id="content">
+  <!-- Content details will be displayed here -->
+</div>
+
+<script>
+document.getElementById("calculateButton").addEventListener("click", function() {
+  var selectedOption = document.getElementById("taxType").value;
+  var contentDiv = document.getElementById("content");
+
+  // Clear previous content
+  contentDiv.innerHTML = "";
+
+  // Display content based on selected option
+  if (selectedOption === "cryptoGains") {
+    contentDiv.innerHTML = `
+      <h2>Tax on Crypto Gains</h2>
+      <ul>
+        <li><strong>Tax Percentage: 30%</strong></li>
+        <li>Your crypto gains refer to the profit that your crypto holdings gather over a period of time. This includes capital gains, exchanging crypto assets, and using crypto for goods or services.</li>
+      
+      <p>Example: Buying Bitcoin for ₹10,000 and selling it for ₹15,000 results in a profit of ₹5,000, which is taxed as capital gains under cryptocurrency tax laws in India. You'll have to pay 30% of the profit as Tax.</p>
+	  
+      <p>NOTE: Loss incurred in your crypto cannot be offset against profits or carried forward. A 1% TDS is applicable to the transfer of VDAs.</p>
+	  </ul>
+    `;
+  } else if (selectedOption === "airdrops") {
+    contentDiv.innerHTML = `
+      <h2>Tax on Airdrops</h2>
+      <ul>
+        <li><strong>Tax Percentage: As per individual's Tax Slab, 30% tax if you later sell</strong></li>
+        <li>Airdrops are taxed as Income from Other Sources (IFOS) if they have value and are traded on exchanges or DEXes.</li>
+      </ul>
+      <p>Example: Receiving ABC tokens as an airdrop with a value of ₹1,00,000 and later selling them for ₹1,20,000 results in taxable gains of ₹20,000, taxed at 30%.</p>
+    `;
+  } else if (selectedOption === "nftTrading") {
+    contentDiv.innerHTML = `
+      <h2>Tax on NFT Trading</h2>
+      <ul>
+        <li><strong>Tax Percentage: 30%</strong></li>
+        <li>NFTs are subject to a 30% tax rate (plus surcharge and cess) under the IT Act from April 01, 2022. An additional 1% TDS will be deducted from every NFT sale.</li>
+      </ul>
+      <p>Example: Selling an NFT for ₹50,000 incurs a tax of ₹15,000 (30%) plus any applicable surcharge and cess.</p>`;
+  } else if (selectedOption === "cryptoMining") {
+    contentDiv.innerHTML = `
+      <h2>Tax on Crypto Mining</h2>
+      <ul>
+        <li><strong>Tax Percentage: Varies</strong></li>
+        <li>Mining income is classified as Income from Business or Income from Other Sources based on the type of mining activity. Crypto mining income is taxable in India.</li>
+      </ul>
+      <p>Example: Earning ₹10,000 from crypto mining is considered income and is subject to taxation as per the applicable tax rate.</p>`;
+  } else if (selectedOption === "cryptoStaking") {
+    contentDiv.innerHTML = `
+      <h2>Tax on Crypto Staking</h2>
+      <ul>
+        <li><strong>Tax Percentage: Varies</strong></li>
+        <li>Staking income is taxed as Other Income at applicable Income Tax slab rates. Capital Gains Tax will be levied upon selling the staked crypto asset.</li>
+      </ul>
+      <p>Example: Staking 100 "X" coins with a 10% APR results in a 10% interest on assets over a year.</p>`;
+  } else if (selectedOption === "cryptoMinting") {
+    contentDiv.innerHTML = `
+      <h2>Tax on Crypto Minting</h2>
+      <ul>
+        <li><strong>Tax Percentage: Not Taxable</strong></li>
+        <li>Minting tokens is not taxable in India as of the 2022 Financial Budget. However, alternative treatment may be possible as per the Income-tax Act.</li>
+      </ul>
+      <p>Example: Minting crypto tokens does not incur taxes in India.</p>`;
+  } else if (selectedOption === "cryptoGifts") {
+    contentDiv.innerHTML = `
+      <h2>Tax on Crypto Gifts</h2>
+      <ul>
+        <li><strong>Tax Percentage: Varies</strong></li>
+        <li>Crypto gifts received with a value up to ₹50,000 are tax-exempt. Gifts from non-relatives exceeding ₹50,000 are taxable. Special occasions, inheritance, marriage, and contemplation of death gifts are exempt from tax.</li>
+      </ul>
+      <p>Example: Receiving crypto gifts from relatives worth ₹40,000 in value is tax-exempt.</p>`;
+  } else if (selectedOption === "cryptoSalary") {
+    contentDiv.innerHTML = `
+      <h2>Tax on Crypto Salary</h2>
+      <ul>
+        <li><strong>Tax Percentage: Varies</strong></li>
+        <li>Receiving a salary in crypto is taxable in India and subject to income tax as per the applicable tax slab rates.</li>
+      </ul>
+      <p>Example: Receiving a monthly crypto salary of ₹50,000 is taxable as per the applicable income tax rate.</p>`;
+  } else if (selectedOption === "cryptoDonations") {
+    contentDiv.innerHTML = `
+      <h2>Tax on Crypto Donations</h2>
+      <ul>
+        <li><strong>Tax Percentage: Varies</strong></li>
+        <li>Crypto donations are taxable in India as the sale of digital assets. Capital gains from the sale of donated cryptos are subject to tax.</li>
+      </ul>
+      <p>Example: Donating crypto worth ₹1,00,000 results in capital gains subject to tax.</p>`;
+  } else if (selectedOption === "cryptoReferrals") {
+    contentDiv.innerHTML = `
+      <h2>Tax on Crypto Referrals</h2>
+      <ul>
+        <li><strong>Tax Percentage: Varies</strong></li>
+        <li>Crypto referral bonuses are considered additional income and are subject to income tax based on the applicable slab rate for the individual.</li>
+      </ul>
+      <p>Example: Earning a referral bonus of ₹5,000 in crypto results in additional taxable income.</p>`;
+  } else if (selectedOption === "tokenSales") {
+    contentDiv.innerHTML = `
+      <h2>Tax on Token Sales (ICOs and IDOs)</h2>
+      <ul>
+        <li><strong>Tax Percentage: Varies</strong></li>
+        <li>ICOs and IDOs are types of token sales subject to taxation in India. Tokens received from ICOs and IDOs are taxed as Income from Other Sources (IFOS) and subject to capital gains upon subsequent sales.</li>
+      </ul>
+      <p>Example: Participating in an ICO and receiving tokens results in taxable income and potential capital gains upon sale.</p>`;
+  }
+  // Add more sections here
+});
+</script>
+
+
+</body>
+</html>
