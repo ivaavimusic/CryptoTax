@@ -284,33 +284,50 @@ footer a:hover {
   <!-- Content details will be displayed here -->
 </div>
 <!-- Table for Income Tax Slabs -->
-  <table  class="dark-mode" id="incomeTaxTable">
-    <caption>Income Tax Slabs</caption>
-    <thead>
-      <tr>
-        <th>Income Range</th>
-        <th>Tax Rate</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Up to ₹2,50,000</td>
-        <td>No tax</td>
-      </tr>
-      <tr>
-        <td>₹2,50,001 - ₹5,00,000</td>
-        <td>5%</td>
-      </tr>
-      <tr>
-        <td>₹5,00,001 - ₹10,00,000</td>
-        <td>20%</td>
-      </tr>
-      <tr>
-        <td>Above ₹10,00,000</td>
-        <td>30%</td>
-      </tr>
-    </tbody>
-  </table>
+  <table class="dark-mode" id="incomeTaxTable">
+  <caption>Income Tax Slabs</caption>
+  <thead>
+    <tr>
+      <th>Income Slab</th>
+      <th>Tax Rate (Existing Regime)</th>
+      <th>Income Slab</th>
+      <th>Tax Rate (New Regime)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Up to RS250,000</td>
+      <td>0%</td>
+      <td>Up to RS250,000</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td>RS250,001 - RS500,000</td>
+      <td>5% above RS250,000</td>
+      <td>RS250,001 - RS500,000</td>
+      <td>5% above RS250,000</td>
+    </tr>
+    <tr>
+      <td>RS500,001 - RS1,000,000</td>
+      <td>RS12,500 + 20% above RS500,000</td>
+      <td>RS500,001 - RS750,000</td>
+      <td>RS12,500 + 10% above RS500,000</td>
+    </tr>
+    <tr>
+      <td>Above RS1,000,000</td>
+      <td>RS112,500 + 30% above RS1,000,000</td>
+      <td>RS750,001 - RS1,000,000</td>
+      <td>RS37,500 + 15% above RS750,000</td>
+    </tr>
+    <tr>
+      <td>RS1,000,001 - RS1,250,000</td>
+      <td>RS75,000 + 20% above RS1,000,000</td>
+      <td></td> <!-- This column left empty as per the new tax regime data -->
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
   <table class="dark-mode" id="transactionTaxTable">
   <caption>Transaction/Tax</caption>
   <thead>
