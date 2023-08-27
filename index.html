@@ -1,19 +1,18 @@
 <html lang="en">
 <head>
 <title>Crypto Tax India</title>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1480953528161220"
-     crossorigin="anonymous"></script>
-    
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+	
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Understanding Crypto Tax in India: Your Ultimate Guide">
 
 <!-- Import fonts from Google Fonts for better cross-device consistency -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+
 <style>
   body {
     background-color: black;
@@ -21,6 +20,18 @@
     font-family: monospace;
     margin: 0;
     padding: 0;
+  }
+
+  /* Dark Mode */
+  body.dark-mode {
+    background-color: black;
+    color: white;
+  }
+
+  /* Light Mode */
+  body.light-mode {
+    background-color: white;
+    color: black;
   }
 
   header {
@@ -32,127 +43,194 @@
     padding: 20px;
   }
 
-  /* Style for the dropdown */
   #taxType {
     background-color: transparent;
-    color: white;
-    border: 1px solid white;
+    border: 1px solid var(--table-border-color);
     padding: 5px;
     border-radius: 5px;
     font-size: 16px;
+    color: var(--table-border-color);
   }
 
-  /* Style for the dropdown options */
   #taxType option {
-    background-color: black;
+    background-color: var(--table-header-bg-color);
+    color: var(--table-header-text-color);
+  }
+
+  /* Styles for dark mode */
+  body.dark-mode #taxType,
+  body.dark-mode #taxType option {
     color: white;
   }
 
   /* Style for the button */
   #calculateButton {
-    background-color: transparent;
-    color: white;
+    background-color: #c1ff72;
     border: 1px solid white;
     padding: 6px 30px;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.5s, color 0.5s;
-	margin-top: 10px;
+    margin-top: 10px;
+    color: black;
   }
 
   /* Style for the button on hover */
   #calculateButton:hover {
-    background-color: #c1ff72;
+    background-color: #dca0f2;
+    border: 1px solid black;
     color: black;
   }
-  footer {
+
+footer {
   text-align: center;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5); /* Use rgba with an alpha value for transparency */
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   position: fixed;
   bottom: 0;
   width: 100%;
 }
-  #incomeTaxTable {
-  border-collapse: collapse; /* Merge borders of adjacent cells */
-  width: 100%;
-  margin-top: 40px; /* Add some spacing between the content and the table */
+
+footer a {
+  color: white; /* Set the desired color for the link */
+  text-decoration: none;
 }
 
-#incomeTaxTable th, #incomeTaxTable td {
-  border: 1px solid white; /* Add a white border to cells */
-  padding: 8px; /* Add padding to cells */
-  text-align: center; /* Center-align content in cells */
+footer a:hover {
+  color: white; /* Set the desired color for the link when hovered */
+  text-decoration: underline; /* Add an underline on hover if desired */
 }
 
-#incomeTaxTable th {
-  background-color: #333; /* Dark background color for table header */
-}
-
-#incomeTaxTable caption {
-  font-weight: bold;
-  margin-bottom: 10px;
-   font-size: 16px;
-}
-
-/* Table 2 styling */
+  /* Tables */
   table {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 50px;
-	margin-bottom: 40px
+    margin-top: 40px;
   }
 
-  th, td {
-    border: 1px solid white;
-    padding: 10px;
+  table th,
+  table td {
+    border: 1px solid var(--table-border-color);
+    padding: 8px;
     text-align: center;
   }
 
-  th {
-    background-color: #333;
-    color: white;
+  table th {
+    background-color: var(--table-header-bg-color);
+    color: var(--table-header-text-color);
+    font-weight: bold;
   }
 
-  caption {
+  table caption {
     font-weight: bold;
     margin-bottom: 10px;
-	 font-size: 16px;
+    font-size: 16px;
   }
+
+  /* Styles for dark mode */
+  body.dark-mode table th,
+  body.dark-mode table td,
+  body.dark-mode table caption {
+    color: white;
+  }
+    /* Styles for light mode */
+  body.light-mode table th,
+  body.light-mode table td,
+  body.light-mode table caption {
+    color: black;
+  }
+
   /* Style for the donate button */
-.donate-with-crypto-button {
-  display: inline-block;
-  padding: 10px 60px;
-  background-color: #c1ff72;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-   margin-bottom: 100px;
-}
+  .donate-with-crypto-button {
+    display: inline-block;
+    padding: 10px 60px;
+    background-color: #c1ff72;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 100px;
+    margin-top: 20px;
+  }
 
-.donate-with-crypto-button:hover {
-  background-color: #dca0f2;
-}
+  .donate-with-crypto-button:hover {
+    background-color: #dca0f2;
+  }
 
+  /* Toggle button */
+  #themeToggle {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    font-size: 12px;
+    border: 1px solid var(--table-border-color);
+    border-radius: 15%;
+    padding: 0.5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
+    background-color: var(--table-header-bg-color);
+  }
+
+  /* Active state for toggle button */
+  #themeToggle.active {
+    transform: rotate(180deg);
+    background-color: var(--table-border-color);
+  }
+
+  /* Styles for dark mode */
+  body.dark-mode #themeToggle,
+  body.dark-mode #themeToggle.active {
+    border-color: white;
+  }
+
+  body.dark-mode #themeToggle.active {
+    background-color: black;
+  }
+
+  /* Emoji styles */
+  .emoji {
+    transition: transform 0.3s, color 0.3s;
+    color: var(--table-header-text-color); /* Set the initial emoji color */
+  }
+
+  /* Rotate the emojis in the active state */
+  #themeToggle.active .emoji {
+    transform: rotate(180deg);
+    color: var(--table-header-text-color); /* Set the color for the emojis in active state */
+  }
 </style>
+
+
 </head>
-<body>
+<body class= "dark-mode">
+
+<!-- Toggle button -->
+
+<div id="themeToggle" class="active" onclick="toggleTheme()">
+  <span class="emoji">Mode</span>
+  <span class="emoji"></span>
+</div>	
 
 <header>
-  <h1>Understanding Crypto Tax in India</br> Your Ultimate Guide🧾</h1>
+  <h1>Crypto Tax India</h1>
+  <p>Your Ultimate Guide 🧾</p>
 </header>
 <footer>
-      Made with ❤️ by <a href="https://linktr.ee/ivaavi.web3">ivaavi.eth</a>
+      Made with ❤️ by <a href="https://www.linktr.ee/ivaavi.web3">ivaavi.eth</a>
     </footer>
 <main>
-  <p style="font-size: 18px;">📌Navigating crypto tax laws in India can be tricky. This guide will help you understand and manage taxes on your digital assets, covering various aspects of crypto taxation.
+ <p style="font-size: 18px;">📌Navigating crypto tax laws in India can be tricky. This guide will help you understand and manage taxes on your digital assets, covering various aspects of crypto taxation.
 </br><li>NOTE 1: Loss incurred in your crypto cannot be offset against profits or carried forward. </br> </li>
 <li>NOTE 2: When filing taxes for cryptocurrency, it's important to follow the First-In-First-Out (FIFO) method for determining the buy price of crypto assets. For instance, if you acquire 1 bitcoin on August 1st, another 1 bitcoin on August 2nd, and 0.5 bitcoin on August 3rd, and subsequently sell 0.5 bitcoin (purchased on August 3rd) on August 10th, the buy price used for tax calculations will correspond to the acquisition on August 1st, following the FIFO principle.</li>
 	</p> 
@@ -187,8 +265,8 @@
   <!-- Content details will be displayed here -->
 </div>
 <!-- Table for Income Tax Slabs -->
-  <table id="incomeTaxTable">
-    <caption>Income Tax Slabs (Old Regime)</caption>
+  <table  class="dark-mode" id="incomeTaxTable">
+    <caption>Income Tax Slabs</caption>
     <thead>
       <tr>
         <th>Income Range</th>
@@ -214,7 +292,7 @@
       </tr>
     </tbody>
   </table>
-  <table id="transactionTaxTable">
+  <table class="dark-mode" id="transactionTaxTable">
   <caption>Transaction/Tax</caption>
   <thead>
     <tr>
@@ -275,7 +353,59 @@
 </table>
 
 <script>
+const body = document.body;
+  const themeToggle = document.getElementById("themeToggle");
 
+  // Define CSS variables for different themes
+  const setDarkMode = () => {
+    body.classList.add("dark-mode");
+    body.classList.remove("light-mode");
+    themeToggle.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+    body.style.setProperty("--table-border-color", "white");
+    body.style.setProperty("--table-header-bg-color", "#333");
+    body.style.setProperty("--table-header-text-color", "white");
+  };
+
+  const setLightMode = () => {
+    body.classList.remove("dark-mode");
+    body.classList.add("light-mode");
+    themeToggle.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
+    body.style.setProperty("--table-border-color", "black");
+    body.style.setProperty("--table-header-bg-color", "#f2f2f2");
+    body.style.setProperty("--table-header-text-color", "black");
+  };
+
+  // Toggle theme and set appropriate styles
+  function toggleTheme() {
+    if (body.classList.contains("dark-mode")) {
+      setLightMode();
+    } else {
+      setDarkMode();
+    }
+  }
+
+  // Initially set the theme based on user's system preference
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  ) {
+    setDarkMode();
+  } else {
+    setLightMode();
+  }
+  document.getElementById("calculateButton").addEventListener("click", function() {
+    // Your existing code for displaying content based on selected option...
+  });
+
+  // Move these lines inside the toggleTheme function
+  const incomeTaxTable = document.getElementById("incomeTaxTable");
+  incomeTaxTable.classList.toggle("dark-mode");
+  incomeTaxTable.classList.toggle("light-mode");
+
+  const transactionTaxTable = document.getElementById("transactionTaxTable");
+  transactionTaxTable.classList.toggle("dark-mode");
+  transactionTaxTable.classList.toggle("light-mode");
+  
 document.getElementById("calculateButton").addEventListener("click", function() {
   var selectedOption = document.getElementById("taxType").value;
   var contentDiv = document.getElementById("content");
@@ -364,7 +494,7 @@ document.getElementById("calculateButton").addEventListener("click", function() 
         <li>Staking income is taxed as Other Income at applicable Income Tax slab rates based on the fair market value of the tokens in INR on the day you receive tokens.</li>
 		<li>Additionally, a tax rate of 30% applies to any profits generated from the subsequent sale, exchange, or utilization of your staking rewards.</li>
       </ul>
-      
+      `;
   } else if (selectedOption === "cryptoMinting") {
     contentDiv.innerHTML = `
       <h2>Tax on Crypto Minting</h2>
@@ -433,5 +563,3 @@ document.getElementById("calculateButton").addEventListener("click", function() 
 </script>
 </body>
 </html>
-
-   
