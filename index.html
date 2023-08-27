@@ -209,6 +209,25 @@ footer a:hover {
     transform: rotate(180deg);
     color: var(--table-header-text-color); /* Set the color for the emojis in active state */
   }
+
+/* Styles for the new IPFS badge button */
+.ipfs-badge-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  
+  margin-bottom: 100px;
+}
+
+/* Add hover effect to the new IPFS badge button */
+.ipfs-badge-button:hover {
+  background-color: #444;
+}
+	
 </style>
 
 
@@ -561,5 +580,8 @@ document.getElementById("calculateButton").addEventListener("click", function() 
   script.src = "https://commerce.coinbase.com/v1/checkout.js?version=201807";
   document.head.appendChild(script);
 </script>
+	<div class="ipfs-badge-button">
+  Hosted on IPFS
+</div>
 </body>
 </html>
