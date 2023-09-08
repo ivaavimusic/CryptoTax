@@ -150,6 +150,11 @@
         <td>NSE Equity</td>
         <td><a href="https://in.tradingview.com/chart/ibq0R6n5/?symbol=NSE%3AIRFC" target="_blank">View Chart</a></td>
       </tr>
+      <tr>
+        <td>DMart</td>
+        <td>NSE Equity</td>
+        <td><a href="https://in.tradingview.com/chart/ibq0R6n5/?symbol=NSE%3ADMART" target="_blank">View Chart</a></td>
+      </tr>
       <!-- Add more rows for additional stocks here -->
     </table>
   </main>
