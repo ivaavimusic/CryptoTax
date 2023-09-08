@@ -124,7 +124,18 @@
         <td>Binance</td>	
         <td><a href="https://www.tradingview.com/chart/ibq0R6n5/?symbol=BINANCE%3AETHUSDT" target="_blank">View Chart</a></td>
       </tr>
+
+   <!-- New row for GALAUSDT here -->
+
+    <tr>
+      <td>GALAUSDT</td>
+      <td>Spot</td>
+      <td>Binance</td>
+      <td><a href="https://in.tradingview.com/chart/ibq0R6n5/?symbol=BINANCE%3AGALAUSDT">Link</a></td>
+    </tr>
+
       <!-- Add more rows for additional cryptos here -->
+
     </table>
 
     <table id="stockTable" class="hidden">
