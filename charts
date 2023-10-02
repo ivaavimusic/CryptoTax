@@ -125,7 +125,7 @@
         <td>Binance</td>	
         <td><a href="https://www.tradingview.com/chart/ibq0R6n5/?symbol=BINANCE%3ABTCUSDT" target="_blank">View Chart</a></td>
       </tr>
-
+ 
       <tr>
         <td>ETHUSDT</td>
         <td>Spot</td>
@@ -140,6 +140,13 @@
       <td>Spot</td>
       <td>Binance</td>
       <td><a href="https://in.tradingview.com/chart/ibq0R6n5/?symbol=BINANCE%3AGALAUSDT" target="_blank">View Chart</a></td>
+    </tr>
+
+    <tr>
+      <td>ADAUSDT</td>
+      <td>Spot</td>
+      <td>Binance</td>
+      <td><a href="https://in.tradingview.com/chart/ibq0R6n5/?symbol=BINANCE%3AADAUSDT" target="_blank">View Chart</a></td>
     </tr>
 
       <!-- Add more rows for additional cryptos here -->
