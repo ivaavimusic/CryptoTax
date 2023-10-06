@@ -1,614 +1,169 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZSY4QZQZD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9ZSY4QZQZD');
-</script>
-<title>Crypto Tax India (beta) </title>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Understanding Crypto Tax in India: Your Ultimate Guide">
-
-<!-- Import fonts from Google Fonts for better cross-device consistency -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap">
-
-<style>
-  body {
-    background-color: black;
-    color: white;
-    font-family: monospace;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Dark Mode */
-  body.dark-mode {
-    background-color: black;
-    color: white;
-  }
-
-  /* Light Mode */
-  body.light-mode {
-    background-color: white;
-    color: black;
-  }
-
-  header {
-    padding: 20px;
-    text-align: center;
-  }
-
-  main {
-    padding: 20px;
-  }
-
-  #taxType {
-    background-color: transparent;
-    border: 1px solid var(--table-border-color);
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 16px;
-    color: var(--table-border-color);
-  }
-
-  #taxType option {
-    background-color: var(--table-header-bg-color);
-    color: var(--table-header-text-color);
-  }
-
-  /* Styles for dark mode */
-  body.dark-mode #taxType,
-  body.dark-mode #taxType option {
-    color: white;
-  }
-
-  /* Style for the button */
-  #calculateButton {
-    background-color: #c1ff72;
-    border: 1px solid black;
-    padding: 6px 30px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.5s, color 0.5s;
-    margin-top: 10px;
-    color: black;
-  }
-
-  /* Style for the button on hover */
-  #calculateButton:hover {
-    background-color: #dca0f2;
-    border: 1px solid black;
-    color: black;
-  }
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-footer a {
-  color: white; /* Set the desired color for the link */
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: white; /* Set the desired color for the link when hovered */
-  text-decoration: underline; /* Add an underline on hover if desired */
-}
-
-  /* Tables */
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 40px;
-  }
-
-  table th,
-  table td {
-    border: 1px solid var(--table-border-color);
-    padding: 8px;
-    text-align: center;
-  }
-
-  table th {
-    background-color: var(--table-header-bg-color);
-    color: var(--table-header-text-color);
-    font-weight: bold;
-  }
-
-  table caption {
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-
-  /* Styles for dark mode */
-  body.dark-mode table th,
-  body.dark-mode table td,
-  body.dark-mode table caption {
-    color: white;
-  }
-    /* Styles for light mode */
-  body.light-mode table th,
-  body.light-mode table td,
-  body.light-mode table caption {
-    color: black;
-  }
-
-  /* Style for the donate button */
-  .donate-with-crypto-button {
-    display: inline-block;
-    padding: 10px 60px;
-    background-color: #c1ff72;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    border: 1px solid black;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-bottom: 10px;
-    margin-top: 20px;
-  }
-
-  .donate-with-crypto-button:hover {
-    background-color: #dca0f2;
-  }
-
-  /* Toggle button */
-  #themeToggle {
-    position: absolute;
-    top: 40px;
-    left: 20px;
-    font-size: 10px;
-    border: 1px solid var(--table-border-color);
-    border-radius: 15%;
-    padding: 0.5px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
-    background-color: var(--table-header-bg-color);
-  }
-
-  /* Active state for toggle button */
-  #themeToggle.active {
-    transform: rotate(180deg);
-    background-color: var(--table-border-color);
-  }
-
-  /* Styles for dark mode */
-  body.dark-mode #themeToggle,
-  body.dark-mode #themeToggle.active {
-    border-color: white;
-  }
-
-  body.dark-mode #themeToggle.active {
-    background-color: black;
-  }
-
-  /* Emoji styles */
-  .emoji {
-    transition: transform 0.3s, color 0.3s;
-    color: var(--table-header-text-color); /* Set the initial emoji color */
-  }
-
-  /* Rotate the emojis in the active state */
-  #themeToggle.active .emoji {
-    transform: rotate(180deg);
-    color: var(--table-header-text-color); /* Set the color for the emojis in active state */
-  }
-
-/* Styles for the new IPFS badge button */
-.ipfs-badge-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
-  border-radius: 5px;
-  font-size: 12px;
-  cursor: pointer;
-  
-  margin-bottom: 100px;
-}
-
-/* Add hover effect to the new IPFS badge button */
-.ipfs-badge-button:hover {
-  background-color: #444;
-}
+    <title>ivaavi.web3	</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
 	
-</style>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+        }
 
+        .header {
+            text-align: center;
+            margin-top: 20px;
+			margin-bottom: 200px;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        .subtext {
+            font-size: 14px;
+        }
+
+		.mode-button {
+			position: fixed;
+			top: 20px; /* Adjust the top value as needed */
+			left: 20px; /* Adjust the left value as needed */
+			cursor: pointer;
+			font-size: 20px;
+			z-index: 1;
+			text-decoration: none; /* Remove underline */
+		}
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #c1ff72;
+            border: 1px solid black;
+            padding: 6px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.5s, color 0.5s;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            color: black;
+			 text-decoration: none; 
+        }
+
+        .button:hover {
+            background-color: #FFB6F7;
+            border: 1px solid black;
+            color: black;
+        }
+
+        /* Style for the donate button */
+        .donate-with-crypto-button {
+            display: inline-block;
+            padding: 10px 60px;
+            background-color: #dca0f2;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            border: 1px solid black;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .donate-with-crypto-button:hover {
+            background-color: #c1ff72;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .night-mode .button {
+            border-color: black;
+			
+        }
+
+        .night-mode {
+            background-color: white;
+            color: black;
+        }
+
+        .night-mode .mode-button {
+            left: 20px;
+        }
+
+        .mode-button::before {
+            content: "🌜🌞";
+        }
+
+        .night-mode .mode-button::before {
+            content: "🌞🌜";
+        }
+    </style>
 </head>
-<body class= "dark-mode">
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="javascript:void(0);" class="mode-button" onclick="toggleMode()"></a>
+            <div class="logo">ivaavi.web3</div>
+            <div class="subtext">Web3.Crypto.Trading</div>
+        </div>
+        <div class="button-container">
+            <a href="https://web3.ivaavi.xyz/tax" target="_blank" class="button">Crypto Tax India (Beta)</a>
+            <a href="https://web3.ivaavi.xyz/charts" target="_blank" class="button">EW Chart Analysis</a>
+            <a href="https://mirror.xyz/0xe7096dAf78c15bF0889230a328e3482930F3c936" target="_blank" class="button">Blog</a>
+            <a href="https://commerce.coinbase.com/checkout/a376eccf-89c1-4f35-ae15-f86033771d05" target="_blank" class="button">Donate via Crypto</a>
+        </div>
+    </div>
+    <div class="footer">Made with love by ivaavi.eth</div>
 
-<!-- Toggle button -->
+    <script>
+        let isNightMode = false;
 
-<div id="themeToggle" class="active" onclick="toggleTheme()">
-  <span class="emoji">Mode</span>
-  <span class="emoji"></span>
-</div>	
+        function toggleMode() {
+            const body = document.body;
+            const modeButton = document.querySelector('.mode-button');
 
-<header>
-  <h1>Crypto Tax India</h1>
-  <p style="font-size: 15px;">Your Ultimate Guide 🧾</p>
-</header>
-<footer>
-      Made with ❤️ by <a href="https://www.linktr.ee/ivaavi.web3">ivaavi.eth</a>
-    </footer>
-<main>
- <p style="font-size: 18px;">📌 Navigating crypto tax laws in India can be tricky. This guide will help you understand and manage taxes on your digital assets, covering various aspects of crypto taxation.
-</br><li>NOTE 1: Loss incurred in your crypto cannot be offset against profits or carried forward. </br> </li>
-<li>NOTE 2: When filing taxes for cryptocurrency, it's important to follow the First-In-First-Out (FIFO) method for determining the buy price of crypto assets. For instance, if you acquire 1 bitcoin on August 1st, another 1 bitcoin on August 2nd, and 0.5 bitcoin on August 3rd, and subsequently sell 0.5 bitcoin (purchased on August 3rd) on August 10th, the buy price used for tax calculations will correspond to the acquisition on August 1st, following the FIFO principle.</li>
-	</p> 
-</br></br>
+            if (isNightMode) {
+                body.classList.remove('night-mode');
+            } else {
+                body.classList.add('night-mode');
+            }
 
-  <!-- Dropdown section -->
-	<select id="taxType">
- <option value="" selected disabled>Select Tax Type</option>
- <option value="cryptoGains">Tax on Crypto Gains</option>
- <option value="buying">Tax on Crypto Buying</option>
- <option value="selling">Tax on Crypto Selling</option>
- <option value="moving">Moving crypto between your own wallets </option>
-   <option value="holding">Tax on Crypto Holding</option>
-   <option value="airdrops">Tax on Airdrops</option>
-   <option value="cryptoGifts">Tax on Crypto Gifts</option>
-  <option value="nftTrading">Tax on NFT Trading</option>
-  <option value="cryptoMining">Tax on Crypto Mining</option>
-  <option value="cryptoStaking">Tax on Crypto Staking Rewards</option>
-  <option value="cryptoMinting">Tax on Crypto Minting</option>
-  <option value="cryptoSalary">Tax on Crypto Salary</option>
-  <option value="cryptoDonations">Tax on Crypto Donations</option>
-  <option value="cryptoReferrals">Tax on Crypto Referrals</option>
-  <option value="tokenSales">Tax on Token Sales (ICOs and IDOs)</option>
-</select>
-
-<!-- Button to calculate tax -->
-<button id="calculateButton">Calculate Tax</button>
-
-<!-- Content display area -->
-<div id="content">
-
-  <!-- Content details will be displayed here -->
-</div>
-
- <!-- Table for Income Tax Slabs -->
-<table class="dark-mode" id="incomeTaxTable">
-  <caption>Income Tax Slabs</caption>
-  <thead>
-    <tr>
-      <th>Income Slab</th>
-      <th>Tax Rate (Existing Regime)</th>
-      <th>Income Slab</th>
-      <th>Tax Rate (New Regime)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Up to ₹250,000</td>
-      <td>0%</td>
-      <td>Up to ₹250,000</td>
-      <td>0%</td>
-    </tr>
-    <tr>
-      <td>₹250,001 - ₹500,000</td>
-      <td>5% above ₹250,000</td>
-      <td>₹250,001 - ₹500,000</td>
-      <td>5% above ₹250,000</td>
-    </tr>
-    <tr>
-      <td>₹500,001 - ₹1,000,000</td>
-      <td>₹12,500 + 20% above ₹500,000</td>
-      <td>₹500,001 - ₹750,000</td>
-      <td>₹12,500 + 10% above ₹500,000</td>
-    </tr>
-    <tr>
-      <td>Above ₹1,000,000</td>
-      <td>₹112,500 + 30% above ₹1,000,000</td>
-      <td>₹750,001 - ₹1,000,000</td>
-      <td>₹37,500 + 15% above ₹750,000</td>
-    </tr>
-    <tr>
-      <td>₹1,000,001 - ₹1,250,000</td>
-      <td>₹75,000 + 20% above ₹1,000,000</td>
-      <td></td> <!-- This column left empty as per the new tax regime data -->
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-
-  <table class="dark-mode" id="transactionTaxTable">
-  <caption>Transaction/Tax</caption>
-  <thead>
-    <tr>
-      <th>Transaction</th>
-      <th>Tax</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Buying crypto</td>
-      <td>1% TDS, usually deducted by the exchange (excluding international & P2P trades)</td>
-    </tr>
-    <tr>
-      <td>Selling crypto</td>
-      <td>30% tax on any gain</td>
-    </tr>
-    <tr>
-      <td>Trading crypto for crypto</td>
-      <td>30% tax on any gain</td>
-    </tr>
-    <tr>
-      <td>Spending crypto</td>
-      <td>30% tax on any gain</td>
-    </tr>
-    <tr>
-      <td>Holding crypto</td>
-      <td>Tax free</td>
-    </tr>
-    <tr>
-      <td>Moving crypto between your own wallets</td>
-      <td>Tax free</td>
-    </tr>
-    <tr>
-      <td>Airdrops of crypto</td>
-      <td>Income Tax at your individual tax rate, 30% tax if you later sell</td>
-    </tr>
-    <tr>
-      <td>Hard forks</td>
-      <td>Income Tax at your individual tax rate on receipt, 30% tax if you later sell</td>
-    </tr>
-    <tr>
-      <td>Gifts of crypto</td>
-      <td>Recipient is generally taxed, with some exceptions for gifts from close family or under ₹50,000</td>
-    </tr>
-    <tr>
-      <td>Donating crypto</td>
-      <td>Only cash donations are tax deductible, any perceived profits may be subject to 30% tax</td>
-    </tr>
-    <tr>
-      <td>Mining rewards</td>
-      <td>Income Tax at your individual tax rate, 30% tax if you later sell</td>
-    </tr>
-    <tr>
-      <td>Staking rewards</td>
-      <td>Income Tax at your individual tax rate, 30% tax if you later sell</td>
-    </tr>
-  </tbody>
-</table>
-
-<script>
-const body = document.body;
-  const themeToggle = document.getElementById("themeToggle");
-
-  // Define CSS variables for different themes
-  const setDarkMode = () => {
-    body.classList.add("dark-mode");
-    body.classList.remove("light-mode");
-    themeToggle.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
-    body.style.setProperty("--table-border-color", "white");
-    body.style.setProperty("--table-header-bg-color", "#333");
-    body.style.setProperty("--table-header-text-color", "white");
-  };
-
-  const setLightMode = () => {
-    body.classList.remove("dark-mode");
-    body.classList.add("light-mode");
-    themeToggle.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
-    body.style.setProperty("--table-border-color", "black");
-    body.style.setProperty("--table-header-bg-color", "#f2f2f2");
-    body.style.setProperty("--table-header-text-color", "black");
-  };
-
-  // Toggle theme and set appropriate styles
-  function toggleTheme() {
-    if (body.classList.contains("dark-mode")) {
-      setLightMode();
-    } else {
-      setDarkMode();
-    }
-  }
-
-  // Initially set the theme based on user's system preference
-  if (
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  ) {
-    setDarkMode();
-  } else {
-    setLightMode();
-  }
-  document.getElementById("calculateButton").addEventListener("click", function() {
-    // Your existing code for displaying content based on selected option...
-  });
-
-  // Move these lines inside the toggleTheme function
-  const incomeTaxTable = document.getElementById("incomeTaxTable");
-  incomeTaxTable.classList.toggle("dark-mode");
-  incomeTaxTable.classList.toggle("light-mode");
-
-  const transactionTaxTable = document.getElementById("transactionTaxTable");
-  transactionTaxTable.classList.toggle("dark-mode");
-  transactionTaxTable.classList.toggle("light-mode");
-  
-document.getElementById("calculateButton").addEventListener("click", function() {
-  var selectedOption = document.getElementById("taxType").value;
-  var contentDiv = document.getElementById("content");
-
-  // Clear previous content
-  contentDiv.innerHTML = "";
-
-  // Display content based on selected option
-  if (selectedOption === "cryptoGains") {
-    contentDiv.innerHTML = `
-      <h2>Tax on Crypto Gains</h2>
-      <ul>
-        <li><strong>Tax Percentage: 30%</strong></li>
-        <li>Your crypto gains refer to the profit that your crypto holdings gather over a period of time. This includes capital gains, exchanging crypto assets, and using crypto for goods or services.</li>
-      
-      <p>Example: Buying Bitcoin for ₹10,000 and selling it for ₹15,000 results in a profit of ₹5,000, which is taxed as capital gains under cryptocurrency tax laws in India. You'll have to pay 30% of the profit as Tax.</p>
-	  
-      <p>NOTE: Loss incurred in your crypto cannot be offset against profits or carried forward. A 1% TDS is applicable to the transfer of VDAs.</p>
-	  </ul>
-    `;
-  } else if (selectedOption === "buying") {
-    contentDiv.innerHTML = `
-      <h2>Tax on Crypto Buying</h2>
-      <ul>
-        <li><strong>Tax Percentage: 1% TDS, usually deducted by the exchange (excluding international & P2P trades)</strong></li>
-        <li>A 1% TDS applies to crypto purchases on Indian exchanges, deducted automatically.</li>
-      
-      <li>For P2P or international platform crypto purchases, buyers deduct and deposit TDS.</li>
-	  </ul>
-    `;
-  }else if (selectedOption === "selling") {
-    contentDiv.innerHTML = `
-      <h2>Tax on Crypto Selling</h2>
-      <ul>
-        <li><strong>Tax Percentage: 1%TDS and 30% tax on any gain</strong></li>
-        <li>It includes both :</br> 1. Selling crypto for fiat currency </br> 2. Selling crypto for crypto currency </li>
-      </ul>
-    `;
-  }else if (selectedOption === "holding") {
-    contentDiv.innerHTML = `
-      <h2>Tax on Crypto Holding</h2>
-      <ul>
-        <li><strong>Tax Percentage:	Tax free</strong></li>
-        <li>There is no tax for just holding any crypto.</li>
-      </ul>
-    `;
-	}else if (selectedOption === "moving") {
-    contentDiv.innerHTML = `
-      <h2>Tax on Moving Crypto Between Your Own Wallets</h2>
-      <ul>
-        <li><strong>Tax Percentage:	Tax free</strong></li>
-        <li>There is no tax for moving crypto to your own wallets.</li>
-      </ul>
-    `;
-  }else if (selectedOption === "airdrops") {
-    contentDiv.innerHTML = `
-      <h2>Tax on Airdrops</h2>
-      <ul>
-        <li><strong>Tax Percentage: As per individual's Tax Slab, 30% tax on gains if you sell later</strong></li>
-        <li>Receiving airdrops are taxed as Income from Other Sources (IFOS) and it is a taxable event at your own tax slab.</li>
-		<li><strong>NOTE:</strong>Airdrops are considered as gifts and you can claim tax exemption if the total value of the Airdrop is less than ₹50,000</li>
-      </ul>
-      <p>Example: Receiving ABC tokens as an airdrop with a value of ₹1,00,000 and later selling them for ₹1,20,000 results in taxable event of receiving the airdrop(at your tax slab rate) PLUS taxable gains of ₹20,000, taxed at 30%.</p>
-    `;
-  } else if (selectedOption === "nftTrading") {
-    contentDiv.innerHTML = `
-      <h2>Tax on NFT Trading</h2>
-      <ul>
-        <li><strong>Tax Percentage: 1% TDS and 30% tax</strong></li>
-        <li>NFTs are subject to a 30% tax rate (plus surcharge and cess) under the IT Act from April 01, 2022. An additional 1% TDS will be deducted from every NFT sale.</li>
-      </ul>
-      <p>Example: Selling an NFT for ₹50,000 incurs a tax of ₹15,000 (30%) plus any applicable surcharge and cess.</p>`;
-  } else if (selectedOption === "cryptoMining") {
-    contentDiv.innerHTML = `
-      <h2>Tax on Crypto Mining</h2>
-      <ul>
-        <li><strong>Tax Percentage:As per individual's Tax Slab, 30% tax if you later sell</strong></li>
-        <li>Mining income is classified as Income from Business or Income from Other Sources based on the type of mining activity. Crypto mining income is taxable in India.</li>
-      </ul>
-      <p>Example: Earning ₹10,000 worth of crypto from crypto mining is considered income and is subject to taxation as per the applicable tax rate. If you hold the crypto and sell it later at ₹15,000, you'll have to pay 30% tax on the gains (30% on ₹5,000 in this case) </p>`;
-  } else if (selectedOption === "cryptoStaking") {
-    contentDiv.innerHTML = `
-      <h2>Tax on Crypto Staking Rewards</h2>
-      <ul>
-        <li><strong>Tax Percentage:As per individual's Tax Slab, 30% tax if you later sell</strong></li></br>
-        <li>Staking income is taxed as Other Income at applicable Income Tax slab rates based on the fair market value of the tokens in INR on the day you receive tokens.</li>
-		<li>Additionally, a tax rate of 30% applies to any profits generated from the subsequent sale, exchange, or utilization of your staking rewards.</li>
-      </ul>
-      `;
-  } else if (selectedOption === "cryptoMinting") {
-    contentDiv.innerHTML = `
-      <h2>Tax on Crypto Minting</h2>
-      <ul>
-        <li><strong>Tax Percentage: Not Taxable</strong></li>
-        <li>Minting tokens is not taxable in India as of the 2022 Financial Budget. However, alternative treatment may be possible as per the Income-tax Act.</li>
-      </ul>
-      <p>Example: Minting crypto tokens does not incur taxes in India.</p>`;
-  } else if (selectedOption === "cryptoGifts") {
-    contentDiv.innerHTML = `
-      <h2>Tax on Crypto Gifts</h2>
-      <ul>
-        <li><strong>Tax Percentage: Varies</strong></li>
-        <li>Crypto gifts received with a value up to ₹50,000 are tax-exempt. Gifts from non-relatives exceeding ₹50,000 are taxable. Special occasions, inheritance, marriage, and contemplation of death gifts are exempt from tax.</li>
-      </ul>
-      <p>Example: Receiving crypto gifts from relatives worth ₹40,000 in value is tax-exempt. But if you receive a crypto gift of value more than ₹50,000 say 50,001, You'll have to pay the tax for the whole amount of ₹50,001 as per your tax slab. </p>`;
-  } else if (selectedOption === "cryptoSalary") {
-    contentDiv.innerHTML = `
-      <h2>Tax on Crypto Salary</h2>
-      <ul>
-        <li><strong>Tax Percentage: As per individual's Tax Slab</strong></li>
-        <li>Receiving a salary in crypto is taxable in India and subject to income tax as per the applicable tax slab rates.</li>
-      </ul>
-      <p>Example: Receiving a monthly crypto salary of ₹50,000 is taxable as per the applicable income tax rate. If you later sell the crypto at a higher price than the price of acquisition, you'll have to pay 30% tax on the gains.</p>`;
-  } else if (selectedOption === "cryptoDonations") {
-    contentDiv.innerHTML = `
-      <h2>Tax on Crypto Donations</h2>
-      <ul>
-        <li><strong>Tax Percentage: Varies</strong></li>
-        <li>Crypto donations are taxable in India as the sale of digital assets. Capital gains from the sale of donated cryptos are subject to tax.</li>
-      </ul>
-      <p>Example: An individual purchased 1 Bitcoin for ₹20,000 and later decided to donate it when the price increased to ₹40,000. </br>According to the crypto tax law in India, the individual would be liable to pay a 30% tax on the capital gains made before the transfer.</p>`;
-  } else if (selectedOption === "cryptoReferrals") {
-    contentDiv.innerHTML = `
-      <h2>Tax on Crypto Referrals</h2>
-      <ul>
-        <li><strong>Tax Percentage: As per individual's Tax Slab</strong></li>
-        <li>Crypto referral bonuses are considered additional income and are subject to income tax based on the applicable slab rate for the individual.</li>
-      </ul>
-      <p>Example: Earning a referral bonus of ₹5,000 in crypto results in additional taxable income.</p>`;
-  } else if (selectedOption === "tokenSales") {
-    contentDiv.innerHTML = `
-      <h2>Tax on Token Sales (ICOs and IDOs)</h2>
-      <ul>
-        <li><strong>Tax Percentage: Varies</strong></li>
-        <li>ICOs and IDOs are types of token sales subject to taxation in India. Tokens received from ICOs and IDOs are taxed as Income from Other Sources (IFOS) and subject to capital gains upon subsequent sales.</li>
-      </ul>
-      <p>Example: Participating in an ICO and receiving tokens results in taxable income and potential capital gains upon sale.</p>`;
-  }
-  // Add more sections here
-});
-</script>
-<!-- Button For Donation using crypto -->
-<div>
-  <a class="donate-with-crypto-button"
-    href="https://commerce.coinbase.com/checkout/a376eccf-89c1-4f35-ae15-f86033771d05"
-    target="_blank"
-    rel="noopener noreferrer"> <!-- Add target and rel attributes -->
-    Donate with Crypto
-  </a>
-</div>
-<script>
-  var script = document.createElement("script");
-  script.src = "https://commerce.coinbase.com/v1/checkout.js?version=201807";
-  document.head.appendChild(script);
-</script>
-	<div class="ipfs-badge-button">
-  Hosted on IPFS
-</div>
+            isNightMode = !isNightMode;
+        }
+		
+    </script>
 </body>
 </html>
