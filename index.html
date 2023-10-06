@@ -27,7 +27,7 @@
 		bottom: 0;
 		left: 0;
 		margin-left: 20px;
-		z-index: -1; /* Place it behind other content */
+		z-index: 1; /* Place it behind other content */
 		width: 22%; /* Make it cover the entire width */
 		height: auto; /* Maintain aspect ratio */
 	}
@@ -55,14 +55,14 @@
             font-size: 14px;
         }
 
-		.mode-button {
-			position: fixed;
-			top: 20px; /* Adjust the top value as needed */
-			left: 20px; /* Adjust the left value as needed */
-			cursor: pointer;
-			font-size: 20px;
-			z-index: 1;
-			text-decoration: none; /* Remove underline */
+       .mode-button {
+		position: fixed;
+		top: 20px; /* Adjust the top value as needed */
+		left: 20px; /* Adjust the left value as needed */
+		cursor: pointer;
+		font-size: 20px;
+		z-index: 1;
+		text-decoration: none; /* Remove underline */
 		}
 
         .button-container {
@@ -137,7 +137,7 @@
 	footer {
 		text-align: center;
 		padding: 20px;
-			 
+		background-color: rgba(0, 0, 0, 0.5);	 
 		color: white;
 		position: fixed;
 		bottom: 0;
