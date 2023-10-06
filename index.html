@@ -113,11 +113,6 @@
             background-color: #c1ff72;
         }
 
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-        }
-
         .night-mode .button {
             border-color: black;
 			
@@ -139,6 +134,26 @@
         .night-mode .mode-button::before {
             content: "🌞🌜";
         }
+	footer {
+		text-align: center;
+		padding: 20px;
+			 
+		color: white;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
+
+	footer a {
+		color: white; /* Set the desired color for the link */
+		 text-decoration: none;
+	}
+
+	footer a:hover {
+		color: white; /* Set the desired color for the link when hovered */
+		text-decoration: underline; /* Add an underline on hover if desired */
+	}
+
     </style>
 </head>
 <body>
@@ -156,7 +171,9 @@
             <a href="https://commerce.coinbase.com/checkout/a376eccf-89c1-4f35-ae15-f86033771d05" target="_blank" class="button">Donate via Crypto</a>
         </div>
     </div>
-    <div class="footer">Made with ❤️ by ivaavi.eth</div>
+    <footer>
+      Made with ❤️ by <a href="https://www.linktr.ee/ivaavi.web3">ivaavi.eth</a>
+    </footer>
 
     <script>
         let isNightMode = false;
