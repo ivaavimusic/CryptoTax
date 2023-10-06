@@ -22,6 +22,15 @@
             flex-direction: column;
             min-height: 100vh;
         }
+	.bg-cutout {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		margin-left: 20px;
+		z-index: -1; /* Place it behind other content */
+		width: 22%; /* Make it cover the entire width */
+		height: auto; /* Maintain aspect ratio */
+	}
 
         .container {
             max-width: 800px;
@@ -133,6 +142,7 @@
     </style>
 </head>
 <body>
+<img src="gayc_transparent.png" alt="Background Cutout" class="bg-cutout">
     <div class="container">
         <div class="header">
             <a href="javascript:void(0);" class="mode-button" onclick="toggleMode()"></a>
