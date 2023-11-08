@@ -156,6 +156,26 @@
       <td><a href="https://in.tradingview.com/chart/ibq0R6n5/?symbol=BINANCE%3ASOLUSDT" target="_blank">View Chart</a></td>
     </tr>
 
+    <tr>
+      <td>SOLUSDT</td>
+      <td>Spot</td>
+      <td>Binance</td>
+      <td><a href="https://in.tradingview.com/chart/ibq0R6n5/?symbol=BINANCE%3AINJUSDT" target="_blank">View Chart</a></td>
+    </tr>
+
+    <tr>
+      <td>SOLUSDT</td>
+      <td>Spot</td>
+      <td>Binance</td>
+      <td><a href="https://in.tradingview.com/chart/ibq0R6n5/?symbol=BINANCE%3AMATICUSDT" target="_blank">View Chart</a></td>
+    </tr>
+
+    <tr>
+      <td>SOLUSDT</td>
+      <td>Spot</td>
+      <td>Binance</td>
+      <td><a href="https://in.tradingview.com/chart/ibq0R6n5/?symbol=BINANCE%3ALINKUSDT" target="_blank">View Chart</a></td>
+    </tr>
       <!-- Add more rows for additional cryptos here -->
 
     </table>
