@@ -176,8 +176,15 @@
       <td>Binance</td>
       <td><a href="https://in.tradingview.com/chart/ibq0R6n5/?symbol=BINANCE%3ALINKUSDT" target="_blank">View Chart</a></td>
     </tr>
-      <!-- Add more rows for additional cryptos here -->
 
+    <tr>
+      <td>LINKUSDT</td>
+      <td>Spot</td>
+      <td>Bybit</td>
+      <td><a href="https://in.tradingview.com/chart/ibq0R6n5/?symbol=BYBIT%3AKASUSDT" target="_blank">View Chart</a></td>
+    </tr>
+
+      <!-- Add more rows for additional cryptos here -->
     </table>
 
     <table id="stockTable" class="hidden">
