@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        iframe {
+            width: 100%;
+            max-width: 400px;
+            border: 0;  /* to remove default border */
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://widget.nicehash.com/countdown/btc-halving-2024-05-10-12-00" width="400" height="350" scrolling="no" id="nhiframe"></iframe>
+
+    <script>
+        var nhiframe = document.getElementById('nhiframe');
+        window.addEventListener('message', function(e) {
+            // message that was passed from iframe page
+            // check message content if you have other messages too
+            let message = e.data;
+            nhiframe.style.height = message.height + 'px';
+        }, false);
+    </script>
+</body>
+</html>
